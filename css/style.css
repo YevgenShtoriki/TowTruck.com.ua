@@ -250,6 +250,7 @@ section {
 .slider-wrapper {
     overflow: hidden;
     width: 100%;
+    touch-action: pan-y;
 }
 
 .slider-track {
@@ -276,6 +277,8 @@ section {
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 .slide:hover .slide-img img {

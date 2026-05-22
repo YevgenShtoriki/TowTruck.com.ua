@@ -129,13 +129,15 @@ document.addEventListener("DOMContentLoaded", () => {
         // Touch events for swipe
         let touchStartX = 0;
         let touchEndX = 0;
+        
+        const wrapper = slider.querySelector('.slider-wrapper');
 
-        track.addEventListener('touchstart', e => {
-            touchStartX = e.changedTouches[0].screenX;
+        wrapper.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].clientX;
         }, {passive: true});
 
-        track.addEventListener('touchend', e => {
-            touchEndX = e.changedTouches[0].screenX;
+        wrapper.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].clientX;
             handleSwipe();
         }, {passive: true});
 
