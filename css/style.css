@@ -306,7 +306,14 @@ section {
     top: 40%;
 }
 
-.slider-arrow:hover {
+@media (hover: hover) {
+    .slider-arrow:hover {
+        background: var(--primary-color);
+        border-color: var(--primary-color);
+    }
+}
+
+.slider-arrow:active {
     background: var(--primary-color);
     border-color: var(--primary-color);
 }
