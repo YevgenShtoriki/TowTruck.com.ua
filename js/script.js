@@ -18,7 +18,7 @@ function changeLanguage(lang) {
         let elements = document.querySelectorAll('.lng-' + key);
         if (elements.length > 0) {
             elements.forEach(el => {
-                el.textContent = langArr[key][lang];
+                el.innerHTML = langArr[key][lang];
             });
         }
     }
@@ -167,4 +167,29 @@ document.addEventListener("DOMContentLoaded", () => {
         // Auto Play
         setInterval(nextSlide, 5000);
     });
+});
+
+// Mobile Header Scroll Logic
+let lastScrollY = window.scrollY;
+const header = document.querySelector('.header');
+const contactsBlock = document.querySelector('.contacts-block');
+
+window.addEventListener('scroll', () => {
+    if (window.innerWidth <= 768) {
+        const currentScrollY = window.scrollY;
+        
+        if (currentScrollY > lastScrollY && currentScrollY > 50) {
+            // Scrolling down
+            if (contactsBlock) {
+                const offset = contactsBlock.offsetTop;
+                header.style.transform = `translateY(-${Math.max(0, offset - 10)}px)`; 
+            }
+        } else {
+            // Scrolling up
+            header.style.transform = 'translateY(0)';
+        }
+        lastScrollY = currentScrollY;
+    } else {
+        header.style.transform = 'translateY(0)';
+    }
 });

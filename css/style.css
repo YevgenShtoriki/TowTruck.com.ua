@@ -49,6 +49,7 @@ a {
     z-index: 100;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     padding: 10px 0;
+    transition: transform 0.3s ease;
 }
 
 .header-container {
@@ -167,10 +168,8 @@ a {
 /* Hero Section */
 .hero {
     position: relative;
-    height: 80vh;
-    min-height: 500px;
-    display: flex;
-    align-items: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
     background-image: url('../img/evakuator-zaporozhye-ukraina-bg.jpg');
     background-size: cover;
     background-position: center;
@@ -188,6 +187,7 @@ a {
     position: relative;
     z-index: 1;
     max-width: 600px;
+    margin: 0 auto;
 }
 
 .hero-title {
@@ -201,7 +201,7 @@ a {
 .hero-slogan {
     font-size: 1.2rem;
     font-weight: 500;
-    margin-bottom: 40px;
+    margin-bottom: 80px;
     color: #222;
 }
 
